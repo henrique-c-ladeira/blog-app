@@ -9,7 +9,18 @@ export class PostController {
 
   public all = catchError(
     async (request: Request, response: Response, next: NextFunction) => {
-      const posts = await this.Posts.getAll();
+      const pageNumber = request.query.page;
+      if (!pageNumber) throw new Error('Specify page number.');
+      if (Number(pageNumber) < 1)
+        throw new Error('Page number should be greater than or equal to 1.');
+      const posts = await this.Posts.getAll(pageNumber);
+      response.status(200).send(posts);
+    },
+  );
+
+  public mostRecent = catchError(
+    async (request: Request, response: Response, next: NextFunction) => {
+      const posts = await this.Posts.getRecent();
       response.status(200).send(posts);
     },
   );

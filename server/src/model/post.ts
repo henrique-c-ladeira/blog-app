@@ -9,8 +9,21 @@ declare interface UpdatePost {
 export class PostModel {
   private readonly postRepository = getRepository(Post);
 
-  public getAll = async (): Promise<Post[]> => {
-    const posts = await this.postRepository.find();
+  public getAll = async (pageNumber): Promise<Post[]> => {
+    const posts = await this.postRepository.find({
+      skip: 4 * (pageNumber - 1),
+      take: 4,
+    });
+    return posts;
+  };
+
+  public getRecent = async (): Promise<Post[]> => {
+    const posts = await this.postRepository.find({
+      order: {
+        createdAt: 'DESC',
+      },
+      take: 5,
+    });
     return posts;
   };
 

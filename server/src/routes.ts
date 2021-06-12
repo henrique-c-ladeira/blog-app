@@ -42,6 +42,12 @@ export const Routes = [
     action: 'one',
   },
   {
+    method: 'get',
+    route: '/recent-posts',
+    controller: PostController,
+    action: 'mostRecent',
+  },
+  {
     method: 'post',
     route: '/posts',
     controller: PostController,
