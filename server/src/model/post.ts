@@ -11,6 +11,9 @@ export class PostModel {
 
   public getAll = async (pageNumber): Promise<Post[]> => {
     const posts = await this.postRepository.find({
+      order: {
+        createdAt: 'DESC',
+      },
       skip: 4 * (pageNumber - 1),
       take: 4,
     });

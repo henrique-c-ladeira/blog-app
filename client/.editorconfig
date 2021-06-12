@@ -1,0 +1,10 @@
+root = true
+
+[*]
+charset = utf-8
+end-of-line = lf
+ident-size = 2
+ident-style = space
+insert-final-newline = true
+max-line-length = 120
+trim_trailing_whitespace = true

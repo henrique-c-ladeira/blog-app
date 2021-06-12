@@ -1,11 +1,18 @@
 import express, { Request, Response } from 'express';
 import * as bodyParser from 'body-parser';
-
+import path from 'path';
 import { Routes } from './routes';
 import { logger } from './middlewares/logger-middleware';
 
 const app = express();
 app.use(bodyParser.json());
+
+// Serve Front End
+app.use(express.static(path.join(__dirname, '../../client', 'build')));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, '../../client', 'build', 'index.html'));
+});
 
 // register express routes from defined application routes
 Routes.forEach((route) => {
