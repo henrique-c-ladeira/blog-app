@@ -1,7 +1,7 @@
-import { Entity, PrimaryColumn } from 'typeorm';
+import { Entity, ObjectIdColumn } from 'typeorm';
 
 @Entity()
 export class Token {
-  @PrimaryColumn()
+  @ObjectIdColumn()
   id: string;
 }
