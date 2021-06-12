@@ -33,9 +33,13 @@ export class TokenModel {
       throw new Error('error in jwt token');
     }
 
-    const token = jwt.sign({ id: userToValidate.id }, process.env.JWT_PRIVATE, {
-      expiresIn: '1h',
-    });
+    const token = jwt.sign(
+      { id: userToValidate.id, name: userToValidate.name },
+      process.env.JWT_PRIVATE,
+      {
+        expiresIn: '1h',
+      },
+    );
 
     return token;
   };

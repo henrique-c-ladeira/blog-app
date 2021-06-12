@@ -7,18 +7,18 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class User {
+export class Post {
   @ObjectIdColumn()
   id: string;
 
   @Column({ unique: true })
-  name: string;
-
-  @Column({ unique: true })
-  email: string;
+  title: string;
 
   @Column()
-  password: string;
+  subtitle: string;
+
+  @Column()
+  author: string;
 
   @CreateDateColumn()
   createdAt: Date;
