@@ -3,7 +3,8 @@
    "version": "0.0.1",
    "description": "Blog application to serve data and handle authentication",
    "engines": {
-      "node": "14.17.0"
+      "node": "14.17.0",
+      "yarn": "1.22.10"
    },
    "devDependencies": {
       "@types/dotenv": "^8.2.0",
