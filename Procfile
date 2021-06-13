@@ -1,1 +1,1 @@
-web: cd ./server && npm install && npm run tsc && npm run start
+web: cd ./server && npm install && npx tsc && npm run start
