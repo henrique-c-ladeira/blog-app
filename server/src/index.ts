@@ -1,5 +1,5 @@
 import 'module-alias/register';
-import { config } from 'dotenv-safe';
+import { config } from 'dotenv';
 import 'reflect-metadata';
 import path from 'path';
 import { createConnection } from 'typeorm';
