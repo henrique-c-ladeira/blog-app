@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Pagination from '@material-ui/lab/Pagination';
-import { Menu, MenuItem } from '@material-ui/core';
 import { usePosts } from '../../utils/helpers/usePosts';
 import  Card  from './components/card';
 import  Navbar  from './components/navbar';
@@ -14,7 +13,6 @@ const Home = () => {
   const postsState = useSelector((state) => state.posts);
   const [page, setPage] = useState(1);
 
-  const [menuOpened, setMenuOpened] = useState(true)
 
   usePosts(page);
 
@@ -29,16 +27,6 @@ const Home = () => {
     <PageContainer>
     <Navbar />
 
-    <Menu
-      id="fade-menu"
-      keepMounted
-      open={menuOpened}
-      onClose={() => setMenuOpened(!menuOpened)}
-    >
-      <MenuItem>Profile</MenuItem>
-      <MenuItem>My account</MenuItem>
-      <MenuItem>Logout</MenuItem>
-    </Menu>
 
     {postsState.isLoading ?
       <ActivityIndicator /> : 
