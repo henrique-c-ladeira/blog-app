@@ -9,5 +9,5 @@ const ormconfig = {
 };
 
 // For heroku -> entities: ['*/dist/entity/*.*'], @TODO IMPORTANT
-
+// For local dev -> entities: ['dist/entity/*.*'], @TODO IMPORTANT
 module.exports = ormconfig;
