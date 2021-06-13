@@ -13,7 +13,6 @@ const Home = () => {
   const postsState = useSelector((state) => state.posts);
   const [page, setPage] = useState(1);
 
-
   usePosts(page);
 
   const handlePageChange = (event) => {
