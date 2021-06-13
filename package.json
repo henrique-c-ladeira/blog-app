@@ -4,6 +4,9 @@
   "description": "Blog Application",
   "author": "Henrique <henrique.c.ladeira@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": "14.17.0"
+  },
   "scripts": {
     "start": "node server/dist/index.js",
     "heroku-prebuild": "cd server && npm install",
