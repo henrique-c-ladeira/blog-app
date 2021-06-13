@@ -38,8 +38,8 @@
   },
   "scripts": {
     "start": "node server/dist/index.js",
-    "build": "yarn --cwd server install && cd server && tsc && yarn --cwd client install && yarn --cwd client build" ,
-    "deploy": "cp -a client/build/. server/public/",
+    "build": "yarn --cwd server install && yarn --cwd client install && yarn --cwd client build" ,
+    "deploy": "ls -a && cp -a client/build/. server/public/",
     "heroku-postbuild": "yarn build && yarn deploy"
   }
 }
