@@ -7,6 +7,9 @@
   "engines": {
     "node": "14.17.0"
   },
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  },
   "scripts": {
     "start": "node server/dist/index.js",
     "heroku-prebuild": "cd server && npm install",
