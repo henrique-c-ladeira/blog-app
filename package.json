@@ -37,7 +37,7 @@
   },
   "scripts": {
     "start": "node server/dist/index.js",
-    "heroku-prebuild": "cd client && npm install && npx react-scripts build",
+    "heroku-postbuild": "cd client && npm install && npx react-scripts build",
     "build": "cd server && tsc" 
 
   }
