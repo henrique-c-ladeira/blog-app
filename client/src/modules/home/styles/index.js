@@ -16,11 +16,11 @@ export const PageContainer = styled.div`
   max-width: 100%;
 `;
 
-export const Text = styled.div`
+export const Title = styled.div`
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
-  font-family: 'Roboto', arial;
+  font-size: 16px;
+  font-family: 'Mulish', sans-serif;
 
   text-align: justify;
 
@@ -33,8 +33,8 @@ export const Text = styled.div`
 export const Author = styled.div`
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  font-family: 'Roboto', arial;
+  font-size: 10px;
+  font-family: 'Mulish', sans-serif;
 
   text-align: left;
 
@@ -47,7 +47,7 @@ export const DateText = styled.div`
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  font-family: 'Roboto', arial;
+  font-family: 'Mulish', sans-serif;
 
   text-align: left;
 
@@ -58,9 +58,9 @@ export const DateText = styled.div`
 
 export const Content = styled.div`
   font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  font-family: 'Roboto', arial;
+  font-weight: 300;
+  font-size: 14px;
+  font-family: 'Mulish', sans-serif;
 
   text-align: left;
 

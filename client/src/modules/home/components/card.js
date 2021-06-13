@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Author, Content, DateText, Container, Text } from '../styles';
+import { Author, Content, DateText, Container, Title } from '../styles';
 
 const Card = ({ title, date, content, author}) => (
   <Container>
-        <Text>{title}</Text>
+        <Title>{title}</Title>
         <DateText>{date}</DateText>
         <Content>{`${content.substring(0, 200)} [...]`}</Content>
         <Author>{author}</Author>

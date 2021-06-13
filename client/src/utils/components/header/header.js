@@ -1,13 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Container, Title } from './header.styled';
+import { useSelector } from 'react-redux';
+import { Container, HeaderItem, Status } from './header.styled';
 
-export const Header = ({ title }) => (
-  <Container>
-    <Title>{title}</Title>
-  </Container>
-);
+export const Header = () => {
+  const title = useSelector(state => state.posts)
 
-Header.propTypes = {
-  title: PropTypes.string.isRequired,
-};
+  return(
+    <Container>
+      <HeaderItem>+</HeaderItem>
+      <Status>Login</Status>
+    </Container>
+  )
+  };

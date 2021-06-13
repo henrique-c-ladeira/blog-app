@@ -1,16 +1,28 @@
 import styled from 'styled-components';
 
 export const Container = styled.nav`
-  background-color: ${(props) => props.theme.colors.lightBlue};
   display: flex;
-  height: 92px;
+  height: 3%;
   align-items: center;
-  justify-content: center;
-  border-radius: 0px 0px 25px 25px;
+  justify-content: space-between;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid ${(props) => props.theme.colors.lightGray};
 `;
 
-export const Title = styled.h1`
+export const Status = styled.h1`
   text-align: center;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Mulish', sans-serif;
   font-size: 18px;
 `;
+
+export const HeaderItem = styled.div`
+  border: 1px solid;
+  border-radius: 3px;
+  font-size: 22px;
+  padding: 5px 8px;
+  margin: 2px;
+`
