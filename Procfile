@@ -1,1 +1,1 @@
-web: cd ./client && npm install && npx react-scripts build && cd ../server && npm install && npx tsc && npm run start
+web: cd ../server && npm install && npx tsc && npm run start
