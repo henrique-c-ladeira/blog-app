@@ -38,7 +38,7 @@
   },
   "scripts": {
     "start": "node server/dist/index.js",
-    "heroku-prebuild": "yarn --cwd server install && yarn --cwd server build",
+    "heroku-prebuild": "yarn --cwd server install && cd server && tsc",
     "build": "yarn --cwd client install && yarn --cwd client build" ,
     "deploy": "cp -a client/build/. server/public/",
     "heroku-postbuild": "yarn build && yarn deploy"
