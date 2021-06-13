@@ -13,8 +13,8 @@ export class PostController {
       if (!pageNumber) throw new Error('Specify page number.');
       if (Number(pageNumber) < 1)
         throw new Error('Page number should be greater than or equal to 1.');
-      const posts = await this.Posts.getAll(pageNumber);
-      response.status(200).send(posts);
+      const [posts, pageCount] = await this.Posts.getAll(pageNumber);
+      response.status(200).send({ posts, pageCount });
     },
   );
 

@@ -9,7 +9,9 @@ declare interface UpdatePost {
 export class PostModel {
   private readonly postRepository = getRepository(Post);
 
-  public getAll = async (pageNumber): Promise<Post[]> => {
+  public getAll = async (pageNumber): Promise<[Post[], number]> => {
+    const postsCount = await this.postRepository.count();
+    const pageCount = Math.ceil(postsCount / 4);
     const posts = await this.postRepository.find({
       order: {
         createdAt: 'DESC',
@@ -17,7 +19,7 @@ export class PostModel {
       skip: 4 * (pageNumber - 1),
       take: 4,
     });
-    return posts;
+    return [posts, pageCount];
   };
 
   public getRecent = async (): Promise<Post[]> => {
