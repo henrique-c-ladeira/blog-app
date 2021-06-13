@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Blog application to fetch data from blog server",
   "private": true,
+  "engines": {
+    "node": "14.17.0",
+    "yarn": "1.22.10"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
