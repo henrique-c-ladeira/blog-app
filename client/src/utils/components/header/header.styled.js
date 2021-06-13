@@ -9,8 +9,6 @@ export const Container = styled.nav`
   padding-top: 10px;
   padding-left: 10px;
   padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid ${(props) => props.theme.colors.lightGray};
 `;
 
 export const Status = styled.h1`
@@ -20,9 +18,10 @@ export const Status = styled.h1`
 `;
 
 export const HeaderItem = styled.div`
-  border: 1px solid;
-  border-radius: 3px;
   font-size: 22px;
   padding: 5px 8px;
   margin: 2px;
+  &:hover {
+    cursor: pointer;
+  }
 `

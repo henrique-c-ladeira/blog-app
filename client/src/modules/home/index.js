@@ -1,17 +1,44 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import Pagination from '@material-ui/lab/Pagination';
+import { Menu, MenuItem } from '@material-ui/core';
 import { usePosts } from '../../utils/helpers/usePosts';
 import  Card  from './components/card';
+import  Navbar  from './components/navbar';
 import { ActivityIndicator } from '../../utils/components/activity-indicator';
-import { ButtonContainer, Button, PageContainer } from './styles'
+import { PageContainer } from './styles'
 // import PropTypes from 'prop-types';
 
 const Home = () => {
+
   const postsState = useSelector((state) => state.posts);
   const [page, setPage] = useState(1);
+
+  const [menuOpened, setMenuOpened] = useState(true)
+
   usePosts(page);
+
+  const handlePageChange = (event) => {
+    const pageNumber = Number(event.target.textContent);
+    setPage(
+      (pageNumber > 0) ? pageNumber : 0
+    )
+  }
+
   return (
     <PageContainer>
+    <Navbar />
+
+    <Menu
+      id="fade-menu"
+      keepMounted
+      open={menuOpened}
+      onClose={() => setMenuOpened(!menuOpened)}
+    >
+      <MenuItem>Profile</MenuItem>
+      <MenuItem>My account</MenuItem>
+      <MenuItem>Logout</MenuItem>
+    </Menu>
 
     {postsState.isLoading ?
       <ActivityIndicator /> : 
@@ -26,11 +53,9 @@ const Home = () => {
         ))}
       </>
     }
-      <ButtonContainer>
-        <Button right={false} type="button" onClick={() => setPage(page-1)}> - </Button>
-        <span> {page} </span>
-        <Button right type="button" onClick={() => setPage(page+1)}> + </Button>
-      </ButtonContainer>
+    <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+      <Pagination hidePrevButton hideNextButton count={postsState.pageCount} page={page} onChange={handlePageChange} />
+    </div>
     </PageContainer>
   );
 };

@@ -14,6 +14,9 @@ export const Container = styled.div`
 
 export const PageContainer = styled.div`
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const Title = styled.div`
