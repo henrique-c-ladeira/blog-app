@@ -37,7 +37,8 @@
   },
   "scripts": {
     "start": "node server/dist/index.js",
-    "build": "ln -s node_modules server/node_modules && cd server && tsc" 
+    "heroku-prebuild": "cd server && npm install",
+    "build": "cd server && tsc" 
 
   }
 }
