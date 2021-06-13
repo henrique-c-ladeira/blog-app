@@ -40,7 +40,7 @@ const Home = () => {
         ))}
       </>
     }
-    <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+    <div style={{width: '100%', display: 'flex', justifyContent: 'center', paddingBottom: 15}}>
       <Pagination hidePrevButton hideNextButton count={postsState.pageCount} page={page} onChange={handlePageChange} />
     </div>
     </PageContainer>
