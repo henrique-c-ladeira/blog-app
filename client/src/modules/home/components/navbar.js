@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Menu, MenuItem } from '@material-ui/core';
-import { MdMenu } from 'react-icons/md';
+import { Drawer, MenuItem, IconButton as MIconButton} from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+import Hidden from '@material-ui/core/Hidden';
 import { useSelector } from 'react-redux';
 import { useRecentPosts } from '../../../utils/helpers/useRecentPosts'
 import { ActivityIndicator } from '../../../utils/components/activity-indicator'
-
-// import { Container } from './styles';
 
 const NavBar = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -16,13 +15,15 @@ const NavBar = () => {
 
   return(
     <Container>
-      <Item onClick={() => setMenuOpened(true)}>
-        <Icon />
-      </Item>
+      <Hidden mdUp >
+        <Item onClick={() => setMenuOpened(true)}>
+          <IconButton> <MenuIcon /> </IconButton> 
+        </Item>
+      </Hidden>
       <Title>Blog Application</Title>
 
 
-    <Menu
+    <Drawer
       id="fade-menu"
       open={menuOpened}
       onClose={() => setMenuOpened(false)}
@@ -34,7 +35,7 @@ const NavBar = () => {
         <MenuTitle> Publicações Recentes </MenuTitle>
         {recentPosts.posts?.map( elem => <MenuItem>{elem}</MenuItem>)}
       </>}
-    </Menu>
+    </Drawer>
     </Container>
   )
 };
@@ -53,7 +54,9 @@ const Container = styled.div`
 const Item = styled.div`
 `;
 
-const Icon = styled(MdMenu)`
+const IconButton = styled(MIconButton).attrs({
+  ariaLabel: 'add',
+})`
   font-size: 25px;
 `;
 

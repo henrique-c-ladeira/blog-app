@@ -4,7 +4,7 @@ const ormconfig = {
   useNewUrlParser: true,
   synchronize: true,
   logging: true,
-  entities: ['*/dist/entity/*.*'],
+  entities: ['dist/entity/*.*'],
   useUnifiedTopology: true,
 };
 

@@ -72,24 +72,10 @@ export const Content = styled.div`
   width: 100%;
 `;
 
-export const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
+export const ListTitle = styled.div`
+  font-size: 18px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 300; 
+  text-align: center;
   padding: 10px;
-  border-bottom: 1px solid ${(props) => props.theme.colors.lightGray};
-`;
-
-export const Button = styled.button`
-  border-width: 0px;
-  background-color: ${(props) => props.theme.colors.lightGray};
-  border-top-left-radius: ${(props) => props.right === true? '0px' : '50%' };
-  border-bottom-left-radius: ${(props) => props.right === true? '0px' : '50%' };
-  border-top-right-radius: ${(props) => props.right === false ? '0px' : '50%' };
-  border-bottom-right-radius: ${(props) => props.right === false? '0px' : '50%' };
-  padding: 4px;
-  font-size: 20px;
-  width: 30px;
 `;
