@@ -13,14 +13,12 @@ import { ListTitle,  PageContainer } from './styles'
 // import PropTypes from 'prop-types';
 
 const Home = () => {
-
   const postsState = useSelector((state) => state.posts);
   const [page, setPage] = useState(1);
   usePosts(page);
 
   const recentPosts = useSelector(state => state.recentPosts);
   useRecentPosts();
-
 
   const handlePageChange = (event) => {
     const pageNumber = Number(event.target.textContent);

@@ -1,13 +1,19 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { IconButton, Button } from '@material-ui/core';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { IconButton, Button, Drawer, TextField } from '@material-ui/core';
 import Hidden from '@material-ui/core/Hidden';
 import AddBoxIcon from '@material-ui/icons/AddBox';
-import { Container } from './header.styled';
+import { Container, HeaderText, ButtonWrapper, Wrapper, ErrorText, LoginText } from './header.styled';
+import { asyncAuth } from '../../../store/ducks/authenticate';
 
 
 export const Header = () => {
-  const title = useSelector(state => state.posts)
+  const dispatch = useDispatch();
+
+  const { name, error } = useSelector(state => state.user)
+
+  const [openLogin, setOpenLogin] = useState(false);
+  const [credentials, setCredentials] = useState({email: '', password: ''});
 
   return(
     <Container>
@@ -17,7 +23,30 @@ export const Header = () => {
       <Hidden smDown>
         <Button variant="contained">Nova Publicação</Button>
       </Hidden>
-      <Button>Login</Button>
+      {name 
+        ? 
+          <HeaderText> Olá, {name}</HeaderText>
+        :
+          <Button onClick={() => setOpenLogin(true)}>Login</Button>
+      }
+      
+      <Drawer anchor='top' open={openLogin} onClose={() => setOpenLogin(false)}>
+        <Wrapper>
+        <LoginText>Realize seu Login</LoginText>
+        <TextField value={credentials.email} onChange={(event) => setCredentials({...credentials, email: event.target.value})} label="email" variant="filled" />
+        <TextField value={credentials.password} onChange={(event) => setCredentials({...credentials, password: event.target.value})} label="password" type="password" variant="filled" />
+        {error && <ErrorText> Ocorreu um erro. Confira suas credenciais ou sua conexão com a internet.</ErrorText>}
+        
+        <ButtonWrapper>
+          <Button onClick={() => {
+            dispatch(asyncAuth(credentials.email, credentials.password))
+            setOpenLogin(false);
+          }}
+          > Login </Button>
+          <Button onClick={() => setOpenLogin(false)}> Sair </Button>
+        </ButtonWrapper>
+        </Wrapper>
+      </Drawer>
     </Container>
   )
   };
