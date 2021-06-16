@@ -18,7 +18,7 @@ const reducer = (state = initialState, action) => {
     case Types.GET_POSTS:
       return { ...state, isLoading: true, posts: [], error: null };
     case Types.GET_POSTS_SUCCESS:
-      return { ...state, isLoading: false, posts: action.payload.posts, pageCount: action.payload.pageCount};
+      return { ...state, isLoading: false, posts: action.payload.posts, pageCount: action.payload.pageCount };
     case Types.GET_POSTS_ERROR:
       return { ...state, isLoading: false, posts: action.payload.error };
     default:
@@ -43,15 +43,16 @@ const getPostsError = (error) => ({
 const asyncGetPosts = (page) => (dispatch) => {
   dispatch(getPosts());
   return axios
-    .get('/posts',{params:{page}})
+    .get('/posts', { params: { page } })
     .then((res) => {
-      const {pageCount} = res.data;
-      const data = res.data.posts.map(elem => {
-        const date = new Date(elem.createdAt)
-        const createdAt = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} às ${date.getHours()}:${date.getMinutes()}`
-        return ({
-          ...elem, createdAt
-        })
+      const { pageCount } = res.data;
+      const data = res.data.posts.map((elem) => {
+        const date = new Date(elem.createdAt);
+        const createdAt = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} às ${date.getHours()}:${date.getMinutes()}`;
+        return {
+          ...elem,
+          createdAt,
+        };
       });
       dispatch(getPostsSuccess(data, pageCount));
     })

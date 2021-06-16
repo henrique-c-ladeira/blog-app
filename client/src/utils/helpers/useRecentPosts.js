@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { asyncGetRecentPosts } from '../../store/ducks/recent-posts';
 
-export const useRecentPosts= () => {
+export const useRecentPosts = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {

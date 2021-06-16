@@ -75,7 +75,7 @@ export const Content = styled.div`
 export const ListTitle = styled.div`
   font-size: 18px;
   font-family: 'Mulish', sans-serif;
-  font-weight: 300; 
+  font-weight: 300;
   text-align: center;
   padding: 10px;
 `;

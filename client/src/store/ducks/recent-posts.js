@@ -44,7 +44,7 @@ const asyncGetRecentPosts = () => (dispatch) => {
   return axios
     .get('/recent-posts')
     .then((res) => {
-      const data = res.data.map(elem => elem.title);
+      const data = res.data.map((elem) => elem.title);
       dispatch(getRecentPostsSuccess(data));
     })
     .catch((error) => dispatch(getRecentPostsError(error.response.data)));

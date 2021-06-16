@@ -11,7 +11,6 @@ export const Container = styled.nav`
   padding-bottom: 10px;
 `;
 
-
 export const HeaderText = styled.h1`
   text-align: center;
   font-family: 'Mulish', sans-serif;
@@ -39,16 +38,16 @@ export const HeaderItem = styled.div`
   &:hover {
     cursor: pointer;
   }
-`
+`;
 export const ButtonWrapper = styled.div`
   display: flex;
   padding: 20px;
   justify-content: center;
-`
+`;
 
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 20px;
-`
+`;

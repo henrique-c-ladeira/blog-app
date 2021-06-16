@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button as MUButton, TextField as MUTextField } from '@material-ui/core'
+import { Button as MUButton, TextField as MUTextField } from '@material-ui/core';
 
 export const Container = styled.div`
   display: flex;
@@ -9,11 +9,11 @@ export const Container = styled.div`
 `;
 
 export const Button = styled(MUButton).attrs({
-  variant: 'contained'
+  variant: 'contained',
 })``;
 
 export const TitleField = styled(MUTextField).attrs({
-  variant: 'outlined'
+  variant: 'outlined',
 })``;
 
 // export const MultilineTextField = styled(MUTextField).attrs({
