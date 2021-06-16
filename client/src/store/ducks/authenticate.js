@@ -10,6 +10,7 @@ const Types = {
 const initialState = {
   id: null,
   name: null,
+  token: null,
   loggedIn: false,
   isLoading: false,
   error: null
@@ -20,9 +21,9 @@ const reducer = (state = initialState, action) => {
     case Types.AUTH:
       return { ...state, isLoading: true, error: null };
     case Types.AUTH_SUCCESS:
-      return { ...state, isLoading: false, name: action.payload.name, id: action.payload.id, loggedIn: true, error: null};
+      return { ...state, isLoading: false, name: action.payload.name, token: action.payload.token, id: action.payload.id, loggedIn: true, error: null};
     case Types.AUTH_ERROR:
-      return { ...state, isLoading: false, name: null, id: null, loggedIn: false, error: action.payload.error };
+      return { ...state, isLoading: false, name: null, token: null, id: null, loggedIn: false, error: action.payload.error };
     default:
       return state;
   }
@@ -32,9 +33,9 @@ const auth = () => ({
   type: Types.AUTH,
 });
 
-const authSuccess = (id, name) => ({
+const authSuccess = (id, name, token) => ({
   type: Types.AUTH_SUCCESS,
-  payload: { id, name },
+  payload: { id, name, token },
 });
 
 const authError = (error) => ({
@@ -47,8 +48,9 @@ const asyncAuth = (email, password) => (dispatch) => {
   return axios
     .post('/token',{email, password})
     .then((res) => {
+      const token = res.data.jwt;
       const { id, name } = jwtDecode(res.data.jwt);
-      dispatch(authSuccess(id, name));
+      dispatch(authSuccess(id, name, token));
     })
     .catch((error) => dispatch(authError(error.response.data)));
 };

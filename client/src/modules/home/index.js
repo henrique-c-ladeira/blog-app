@@ -39,6 +39,7 @@ const Home = () => {
             <>
               {postsState.posts.map( post => (
                 <Card
+                  id={post.id}
                   title={post.title}
                   date={post.createdAt}
                   content={post.subtitle}

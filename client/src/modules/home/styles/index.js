@@ -79,3 +79,7 @@ export const ListTitle = styled.div`
   text-align: center;
   padding: 10px;
 `;
+
+export const WrapTitle = styled.div`
+  position: relative;
+`;
