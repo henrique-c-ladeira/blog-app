@@ -1,13 +1,13 @@
 {
    "compilerOptions": {
-      "lib": ["es6"],
+      "lib": ["es2018"],
       "typeRoots": [
          "./src/@types",
          "./node_modules/@types"],
       "types": ["jest","node"],
       "outDir": "dist",
       "module": "commonjs",
-      "target": "es6",
+      "target": "es2018",
       "esModuleInterop": true,
       "sourceMap": true,
       "rootDirs": ["src", "tests"],

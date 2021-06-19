@@ -14,13 +14,16 @@ export const Container = styled.div`
 
 export const PageContainer = styled.div`
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
-export const Text = styled.div`
+export const Title = styled.div`
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
-  font-family: 'Roboto', arial;
+  font-size: 16px;
+  font-family: 'Mulish', sans-serif;
 
   text-align: justify;
 
@@ -33,8 +36,8 @@ export const Text = styled.div`
 export const Author = styled.div`
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  font-family: 'Roboto', arial;
+  font-size: 10px;
+  font-family: 'Mulish', sans-serif;
 
   text-align: left;
 
@@ -47,7 +50,7 @@ export const DateText = styled.div`
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  font-family: 'Roboto', arial;
+  font-family: 'Mulish', sans-serif;
 
   text-align: left;
 
@@ -58,9 +61,9 @@ export const DateText = styled.div`
 
 export const Content = styled.div`
   font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  font-family: 'Roboto', arial;
+  font-weight: 300;
+  font-size: 14px;
+  font-family: 'Mulish', sans-serif;
 
   text-align: left;
 
@@ -69,24 +72,14 @@ export const Content = styled.div`
   width: 100%;
 `;
 
-export const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
+export const ListTitle = styled.div`
+  font-size: 18px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 300;
+  text-align: center;
   padding: 10px;
-  border-bottom: 1px solid ${(props) => props.theme.colors.lightGray};
 `;
 
-export const Button = styled.button`
-  border-width: 0px;
-  background-color: ${(props) => props.theme.colors.lightGray};
-  border-top-left-radius: ${(props) => props.right === true? '0px' : '50%' };
-  border-bottom-left-radius: ${(props) => props.right === true? '0px' : '50%' };
-  border-top-right-radius: ${(props) => props.right === false ? '0px' : '50%' };
-  border-bottom-right-radius: ${(props) => props.right === false? '0px' : '50%' };
-  padding: 4px;
-  font-size: 20px;
-  width: 30px;
+export const WrapTitle = styled.div`
+  position: relative;
 `;

@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { asyncGetPosts } from '../../store/ducks/posts';
+import { asyncGetRecentPosts } from '../../store/ducks/recent-posts';
 
-export const usePosts = (page) => {
+export const useRecentPosts = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     (async () => {
-      dispatch(asyncGetPosts(page));
+      dispatch(asyncGetRecentPosts());
     })();
-  }, [page]);
+  }, []);
 };

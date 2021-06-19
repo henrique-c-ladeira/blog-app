@@ -1,0 +1,23 @@
+{
+  "name": "blog-app",
+  "version": "1.0.0",
+  "description": "Blog Application",
+  "author": "Henrique <henrique.c.ladeira@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "14.17.0",
+    "yarn": "1.22.10"
+  },
+  "devDependencies": {
+     "@types/jest": "^26.0.20",
+     "@types/node": "^8.0.29",
+     "rimraf": "^3.0.2",
+     "typescript": "^4.2.3"
+  },
+  "scripts": {
+    "start": "node server/dist/index.js",
+    "build": "yarn --cwd server install && yarn --cwd server build && yarn --cwd client install && yarn --cwd client build" ,
+    "deploy": "cp -a client/build/. server/public/",
+    "heroku-postbuild": "yarn build && yarn deploy"
+  }
+}
