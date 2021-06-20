@@ -39,10 +39,3 @@ Liked it? Find it useful? Support by ⭐'ing it.
 ### 🚧 TODO and Notes:
 
 - This is still an alpha version with unimplemented features.
-- Make sure to set up ormconfig.js correctly
-
-  ```
-  if you want to deploy on heroku -> entities: ['*/dist/entity/*.*']
-
-  if you want to build locally -> entities: ['dist/entity/*.*']
-  ```
