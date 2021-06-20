@@ -1,7 +1,27 @@
-# Awesome Project Build with TypeORM
+# Server Side Blog Application
 
-Steps to run this project:
+This server side application provides an API to handle authentication and CRUD operation on a database as well as serving a SPA (Single Page Application) at the '`/`'.
 
-1. Run `npm i` command
-2. Setup database settings inside `ormconfig.json` file
-3. Run `npm start` command
+## Features:
+
+- Performs CRUD operation on users
+- Performs CRUD operation on posts
+- Retrieves valid json web token for authentication
+
+## Libraries and Tools:
+
+- Node.js
+- Typescript
+- TypeORM
+- Express
+
+### 🚧 TODO and Notes:
+
+- This is still an alpha version with unimplemented features.
+- Make sure to set up ormconfig.js correctly
+
+  ```
+  if you want to deploy on heroku -> entities: ['*/dist/entity/*.*']
+
+  if you want to build locally -> entities: ['dist/entity/*.*']
+  ```
