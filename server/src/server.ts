@@ -1,10 +1,12 @@
 import express, { Request, Response } from 'express';
+import cors from 'cors';
 import * as bodyParser from 'body-parser';
 import path from 'path';
 import { Routes } from './routes';
 import { logger } from './middlewares/logger-middleware';
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
 // Serve Front End
