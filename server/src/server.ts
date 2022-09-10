@@ -6,7 +6,7 @@ import { Routes } from './routes';
 import { logger } from './middlewares/logger-middleware';
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
 
 // Serve Front End
