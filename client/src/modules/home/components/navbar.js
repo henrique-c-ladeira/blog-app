@@ -23,7 +23,7 @@ const NavBar = () => {
           </IconButton>
         </Item>
       </Hidden>
-      <Title>Blog Application</Title>
+      <Title>Fórum Aberto</Title>
 
       <Drawer id="fade-menu" open={menuOpened} onClose={() => setMenuOpened(false)} disableAutoFocusItem>
         {recentPosts.loading ? (
